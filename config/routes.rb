@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  namespace :api do
-    get "hello", to: "auth#index"
+  scope :api do
+    resource :tokens, only: [:show]
   end
-  root to: "auth#index"
+  #root to: "auth#index"
 end
