@@ -1,4 +1,9 @@
 class ApplicationController < ActionController::API
+  include Knock::Authenticable
+
+  before_action :authenticate_user
+
+  # todo err handling generic
   # rescue_from StandardError, with: :render_error_message
 
   # def render_error_message(exception)
